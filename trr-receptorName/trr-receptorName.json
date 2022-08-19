@@ -1,0 +1,14 @@
+{
+  "credentials": [
+    {
+      "display": "Field 1",
+      "placeholder": "field1",
+      "field": "field1"
+    },
+    {
+      "display": "Field 2",
+      "placeholder": "field2",
+      "field": "field2"
+    }
+  ]
+}
