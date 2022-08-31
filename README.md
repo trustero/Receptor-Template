@@ -20,6 +20,8 @@ The Receptor consists of these 2 files:
   allow your Receptor to connect to a Service Provider like AWS
 - Source code that implements the [Receptor interface from the SDK](https://pkg.go.dev/github.com/trustero/api/go/receptor_sdk#Receptor)
 
+There is a "Receptor Developer Guide" locaded in the `docs` directory for detailed instructions on how to write a Receptor
+
 ## Testing A Receptor
 
 You should be able to run your receptor code via the command line to confirm the Verify and Scan functions produce the correct output.
