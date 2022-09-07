@@ -25,7 +25,7 @@ type Receptor struct {
 // Set the name of the receptor in the const declaration above
 // This will let the receptor inform Trustero about itself
 func (r *Receptor) GetReceptorType() string {
-	return receptorName
+	return "trr-custom"
 }
 
 // Set the names of the services in the const declaration above
