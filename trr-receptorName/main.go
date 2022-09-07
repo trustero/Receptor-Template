@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	receptorName = "CHANGE ME"
+	receptorName = "trr-custom"
 	serviceName1 = "CHANGE ME"
 	serviceName2 = "CHANGE ME"
 )
@@ -25,7 +25,7 @@ type Receptor struct {
 // Set the name of the receptor in the const declaration above
 // This will let the receptor inform Trustero about itself
 func (r *Receptor) GetReceptorType() string {
-	return "trr-custom"
+	return receptorName
 }
 
 // Set the names of the services in the const declaration above
@@ -41,18 +41,18 @@ func (r *Receptor) GetCredentialObj() (credentialObj interface{}) {
 	return r
 }
 
-// This function will call into the service provider API with the provided 
+// This function will call into the service provider API with the provided
 // credentials and confirm that the credentials are valid. Usually a simple
-// API call like GET org name. If the credentials are not valid, 
+// API call like GET org name. If the credentials are not valid,
 // return a relevant error message
 func (r *Receptor) Verify(credentials interface{}) (ok bool, err error) {
 
 	return
 }
 
-// The Discover function returns a list of Service Entities. This function 
+// The Discover function returns a list of Service Entities. This function
 // makes any relevant API calls to the Service Provider to gather information
-// about how many Service Entity Instances are in use. If at any point this 
+// about how many Service Entity Instances are in use. If at any point this
 // function runs into an error, log that error and continue
 func (r *Receptor) Discover(credentials interface{}) (svcs []*receptor_v1.ServiceEntity, err error) {
 
