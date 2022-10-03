@@ -218,9 +218,9 @@ This will create an `Evidence` object. Individual S3 buckets can then be added t
 The `evidence.AddRow` call takes in an interface of the data that is to be displayed. 
 
 For example, the S3 evidence should show a table with a list of all S3 buckets, when they were created, and their encryption status.
-
+-- --
 **_IMPORTANT - You will need to keep track of all API calls made to gather evidence. Each evidence object should also include the raw API call made, as well as the raw JSON response from the api call_**
-
+-- --
 To add the raw API call and raw JSON response to the evidence object, you wil need to use the “Evidence.AddSource” function
 
 For S3, the Evidence object would look like this:
