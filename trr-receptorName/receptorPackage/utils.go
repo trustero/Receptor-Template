@@ -1,4 +1,4 @@
 /* TODO: Name package */
-package receptorPackageName
+package receptorPackage
 
 /* TODO: Write any helper functions here */

@@ -1,5 +1,5 @@
 /* TODO: Name package */
-package receptorPackageName_test
+package receptorPackage_test
 
 import (
 	"github.com/stretchr/testify/assert"

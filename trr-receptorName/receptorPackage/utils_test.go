@@ -1,4 +1,4 @@
 /* TODO: Name package */
-package receptorPackageName_test
+package receptorPackage_test
 
 /* TODO: Write any tests for your functions here */
