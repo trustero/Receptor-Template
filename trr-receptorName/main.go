@@ -4,10 +4,11 @@ package main
 
 /* TODO: Change import name */
 import (
+	receptorPackage "receptor/trr-receptorName/receptorPackage"
+
 	"github.com/trustero/api/go/receptor_sdk"
 	"github.com/trustero/api/go/receptor_sdk/cmd"
 	"github.com/trustero/api/go/receptor_v1"
-	"receptor/trr-receptorName/receptorPackageName"
 )
 
 // This struct holds the credentials the receptor needs to authenticate with the
@@ -24,16 +25,14 @@ type Receptor struct {
 // Set the name of the receptor in the const declaration above
 // This will let the receptor inform Trustero about itself
 func (r *Receptor) GetReceptorType() string {
-	/* TODO: Change to package name */
-	return receptorPackageName.GetReceptorTypeImpl()
+	return receptorPackage.GetReceptorTypeImpl()
 }
 
 // Set the names of the services in the const declaration above
 // This will let the receptor inform Trustero about itself
 // Feel free to add or remove services as needed
 func (r *Receptor) GetKnownServices() []string {
-	/* TODO: Change to package name */
-	return receptorPackageName.GetKnownServicesImpl()
+	return receptorPackage.GetKnownServicesImpl()
 }
 
 // This will return Receptor struct defined above when the receptor is asked to
@@ -48,9 +47,8 @@ func (r *Receptor) GetCredentialObj() (credentialObj interface{}) {
 // return a relevant error message
 func (r *Receptor) Verify(credentials interface{}) (ok bool, err error) {
 	c := credentials.(*Receptor)
-	/* TODO: Change to package name */
 	/* TODO: Change crediential field names */
-	return receptorPackageName.VerifyImpl(c.field1, c.field2)
+	return receptorPackage.VerifyImpl(c.field1, c.field2)
 }
 
 // The Discover function returns a list of Service Entities. This function
@@ -59,18 +57,16 @@ func (r *Receptor) Verify(credentials interface{}) (ok bool, err error) {
 // function runs into an error, log that error and continue
 func (r *Receptor) Discover(credentials interface{}) (svcs []*receptor_v1.ServiceEntity, err error) {
 	c := credentials.(*Receptor)
-	/* TODO: Change to package name */
 	/* TODO: Change crediential field names */
-	return receptorPackageName.DiscoverImpl(c.field1, c.field2)
+	return receptorPackage.DiscoverImpl(c.field1, c.field2)
 }
 
 // Report will often make the same API calls made in the Discover call, but it
 // will additionally create evidences with the data returned from the API calls
 func (r *Receptor) Report(credentials interface{}) (evidences []*receptor_sdk.Evidence, err error) {
 	c := credentials.(*Receptor)
-	/* TODO: Change to package name */
 	/* TODO: Change crediential field names */
-	return receptorPackageName.ReportImpl(c.field1, c.field2)
+	return receptorPackage.ReportImpl(c.field1, c.field2)
 }
 
 func main() {
