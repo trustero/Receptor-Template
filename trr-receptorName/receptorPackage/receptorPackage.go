@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	receptorName = "trr-receptorName"
+	receptorName = "trr-custom"
 	serviceName  = "Custom Service"
 )
 
