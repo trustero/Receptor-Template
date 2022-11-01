@@ -282,6 +282,9 @@ receptor are in a markdown dialog in the modal.
 
 ### Code quality
 
+#### Dependencies
+1. [goreportcard-cli](https://github.com/gojp/goreportcard)
+
 #### Unit tests
 This will run the tests in the receptor directory. The expectation is the tests pass.
 ```
