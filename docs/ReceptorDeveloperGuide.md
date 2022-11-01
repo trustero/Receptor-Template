@@ -222,6 +222,12 @@ For example, the S3 evidence should show a table with a list of all S3 buckets, 
 **_IMPORTANT - You will need to keep track of all API calls made to gather evidence. Each evidence object should also include the raw API call made, as well as the raw JSON response from the api call_**
 -- --
 To add the raw API call and raw JSON response to the evidence object, you wil need to use the “Evidence.AddSource” function
+For example, the S3 evidence should show a table with a list of all S3 buckets, when they were created, and their encryption status.
+-- --
+**_IMPORTANT - Calls to Evidence.AddSource must add properly formatted JSON as the response_**
+-- --
+
+If you know the API call then add the endpoint to the request, otherwise use the function name.
 
 For S3, the Evidence object would look like this:
 
