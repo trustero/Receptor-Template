@@ -1,6 +1,6 @@
 GOCMD=go
 GOTEST=$(GOCMD) test
-RECEPTOR_PACKAGE?=./trr-receptorName/receptorPackage
+RECEPTOR_PACKAGE?=./jamfReceptor/receptorPackage
 
 GREEN  := $(shell tput -Txterm setaf 2)
 YELLOW := $(shell tput -Txterm setaf 3)

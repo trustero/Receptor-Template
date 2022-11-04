@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/rs/zerolog v1.26.1
 	github.com/stretchr/testify v1.7.1
-	github.com/trustero/api/go v0.0.0-20220817221749-8b351f636e3d
+	github.com/trustero/api/go v0.0.0-20221104165746-c11cdde07d8a
 )
 
 require (
@@ -22,7 +22,9 @@ require (
 	github.com/natefinch/lumberjack v2.0.0+incompatible // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.1 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/sirupsen/logrus v1.7.0 // indirect
 	github.com/spf13/afero v1.8.2 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/cobra v1.5.0 // indirect
@@ -30,6 +32,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.12.0 // indirect
 	github.com/subosito/gotenv v1.3.0 // indirect
+	github.com/trustero/jamf-api-client-go v0.0.0-20220722001626-59ff06395300 // indirect
 	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e // indirect
 	golang.org/x/oauth2 v0.0.0-20220722155238-128564f6959c // indirect
 	golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d // indirect
