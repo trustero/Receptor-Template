@@ -145,23 +145,23 @@ As a developer, you will need to implement the following functions to have a wor
 5. func (r *Receptor) Discover(credentials interface{}) (svcs []*receptor_v1.ServiceEntity, err error) {}
 6. func (r *Receptor) Report(credentials interface{}) (evidences []*receptor_sdk.Evidence, err error) {}
 
-#### Get Receptor Type
+#### GetReceptorType
 
 Returns the “type” of the receptor, usually the name
 
 Ex: “trr-aws”
 
 ```
-NOTE: If you are adding a custom receptor using our "Add Receptor" modal in the application's UI, your custom receptor's Get Receptor Type function must return "trr-custom"
+NOTE: If you are adding a custom receptor using our "Add Receptor" modal in the application's UI, your custom receptor's GetReceptorType function must return "trr-custom"
 ```
 
-#### Get Known Services
+#### GetKnownServices
 
 Returns a list of services that this receptor gathers information for.
 
 Ex: “S3, RDS, IAM”
 
-#### Get Credential Obj
+#### GetCredentialObj
 
 Returns a struct with the needed credential fields
 Ex: 
@@ -323,7 +323,7 @@ To run all of the above run the following command.
 1. Build your custom receptor using the instructions provided in this guide. 
 
 ```
-NOTE: Your receptor's Get Receptor Type function must return "trr-custom", and you must use "Custom Service" as your service name.
+NOTE: Your receptor's GetReceptorType function must return "trr-custom", and you must use "Custom Service" as your service name.
 ```
 
 ### Add Your Custom Receptor to the Application
