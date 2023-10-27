@@ -328,8 +328,8 @@ NOTE: Your receptor's Get Receptor Type function must return "trr-custom", and y
 
 ### Add Your Custom Receptor to the Application
 
-1. In the Trustero application, navigate to the "Receptors" tab of the "Services" page. (Click on Content > Services in the lefthand navigation bar).
-2. Click on the "Add Receptor" button, which will open a modal displaying supported receptors. 
+1. In the Trustero application, navigate to the `Receptors` tab of the `Services` page. (Click on Content > Services in the lefthand navigation bar).
+2. Click on the `Add Receptor` button, which will open a modal displaying supported receptors. 
 3. At the bottom of the modal, click on the text that reads `Add a custom receptor`.
 4. Enter a nickname for your receptor and click `Activate`.
 
