@@ -151,6 +151,10 @@ Returns the “type” of the receptor, usually the name
 
 Ex: “trr-aws”
 
+```
+NOTE: If you are adding a custom receptor using our "Add Receptor" modal in the application's UI, your custom receptor's Get Receptor Type function must return "trr-custom"
+```
+
 #### Get Known Services
 
 Returns a list of services that this receptor gathers information for.
@@ -212,6 +216,10 @@ The `receptor_sdk.NewEvidence` function takes in :
 - Entity type, e.g. “bucket”
 - Caption, e.g. “S3 Bucket inventory”
 - Description, e.g. “A list of S3 buckets with user data”
+
+```
+NOTE: If you are adding a custom receptor using our "Add Receptor" modal in the application's UI, you must use "Custom Service" as your service name.
+```
 
 This will create an `Evidence` object. Individual S3 buckets can then be added to this evidence object via the `evidence.AddRow` call.
 
