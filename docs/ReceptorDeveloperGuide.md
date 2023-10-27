@@ -284,9 +284,7 @@ This command will run the Verify, Discover, and Report functions that you wrote 
 While using the `dryrun` facilities can be useful in development, Trustero will be evaluating the evidence in the
 product. While normally when a new receptor is added it will be added to our codebase, we support user
 written receptors. This will be how the receptor functionality will be tested. There are instructions for how to add 
-your receptor as a custom receptor in the product. In the `Scope` page when you click `Add Receptor` a modal opens
-which displays the supported receptors. You will select `Custom Receptor`. The instructions for adding a customer
-receptor are in a markdown dialog in the modal. 
+your receptor as a custom receptor in the product. In the `Receptors` tab of the `Services` page, when you click `Add Receptor` a modal opens which displays the supported receptors. At the bottom of the modal, click on the text that reads `Add a custom receptor`. The instructions for adding a customer receptor are in a markdown dialog in the modal. Instructions can also be found at the bottom of this guide. 
 
 ### Code quality
 
@@ -317,3 +315,50 @@ To run all of the above run the following command.
 ```
 # RECEPTOR_PACKAGE=~/Trustero/Receptor-Template/trr-receptorName/receptorPackageName/ make test-all
 ```
+
+## Adding a Custom Receptor using the "Add Receptor" Modal in the application's UI
+
+### Build Your Custom Receptor
+
+1. Build your custom receptor using the instructions provided in this guide. 
+
+```
+NOTE: Your receptor's Get Receptor Type function must return "trr-custom", and you must use "Custom Service" as your service name.
+```
+
+### Add Your Custom Receptor to the Application
+
+1. In the Trustero application, navigate to the "Receptors" tab of the "Services" page. (Click on Content > Services in the lefthand navigation bar).
+2. Click on the "Add Receptor" button, which will open a modal displaying supported receptors. 
+3. At the bottom of the modal, click on the text that reads `Add a custom receptor`.
+4. Enter a nickname for your receptor and click `Activate`.
+
+### Get Your Receptor Token and Id
+
+1. Select your new custom receptor from the list on the `Receptors` page.
+2. Select the `Custom Receptor Config` tab.
+3. Click Receptor ID to copy the ID to your clipboard.
+4. Click Receptor Token to copy the token to your clipboard.
+
+### Verify and Run Your Receptor
+1. This is the general form for CLI commands to run your receptor. For `<receptor_credentials>` simply list out the credentials for your receptor in order:
+```
+$ go run ./<receptor-name> <verb> <receptor token> <receptor credentials> --receptor-id <receptor id> -s prod.api.infra.trustero.com
+```
+2. In order to verify your receptor, you can run the following command, replacing default values with the appropriate values for your receptor:
+```
+$ go run ./<receptor-name> verify <receptor token> <receptor credentials> --receptor-id <receptor id> -s prod.api.infra.trustero.com
+```
+3. In order to add evidence using your receptor, you can run the following command, replacing default values with the appropriate values for your receptor:
+```
+$ go run ./<receptor-name> scan <receptor token> <receptor credentials> --receptor-id <receptor id> --find-evidence -s prod.api.infra.trustero.com
+```
+
+### Add Evidence to Specific Controls Using Your Receptor
+
+1. Navigate to the `Controls` page in the application (click on Content > Controls in the lefthand navigation bar).
+2. Select which control you would like to connect to your receptor.
+3. On the control's show page, select the `Automated Evidence` tab.
+4. Click on `Connect Automated Evidence`.
+5. Select the row item labeled `Custom Receptor: <Service Entity Type>`, where `<Service Entity Type>` is the service entity type for which you would like to collect evidence.
+6. Run the `scan` command from the previous section whenever you would like to collect evidence and post it to the control(s) connected to your receptor.
