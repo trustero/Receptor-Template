@@ -69,7 +69,8 @@ func (r *Receptor) Report(credentials interface{}, config interface{}) (evidence
 	return receptorPackage.ReportImpl(c.field1, c.field2)
 }
 
-// Deprecated: return nil, nil
+// Configure returns a ReceptorConfiguration object that represents the configuration
+// of the receptor.
 func (r *Receptor) Configure(credentials interface{}) (config *receptor_v1.ReceptorConfiguration, err error) {
 	return nil, nil
 }
