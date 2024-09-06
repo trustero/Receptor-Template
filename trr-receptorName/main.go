@@ -69,30 +69,56 @@ func (r *Receptor) Report(credentials interface{}, config interface{}) (evidence
 	return receptorPackage.ReportImpl(c.field1, c.field2)
 }
 
+// Deprecated: return nil, nil
 func (r *Receptor) Configure(credentials interface{}) (config *receptor_v1.ReceptorConfiguration, err error) {
 	return nil, nil
 }
 
+// GetAuthMethods returns the authentication methods supported by the receptor
+// This is usually implemented for services that support multiple authentication
+// so as to support previously configured authentication methods that need not be
+// the preferred method anymore. If only one authentication method is available the
+// function should return nil
 func (r *Receptor) GetAuthMethods() interface{} {
 	return nil
 }
 
+// GetInstructions returns the instructions for the receptor in markdown format
+// The instructions should be in the 'resources' directory so that they can be
+// embedded in the receptor executable. Helper functions has been provided in
+// the receptorPackage to embed the instructions from file content.
 func (r *Receptor) GetInstructions() (string, error) {
-	return "", nil
+	return receptorPackage.GetInstructionsImpl()
 }
 
+// GetLogo returns the logo for the receptor in svg format. The logo should be in
+// the 'resources' directory so that it can be embedded in the receptor executable.
+// Helper function has been provided in the receptorPackage to embed the logo from
+// the file content. The logo file should be in svg format.
 func (r *Receptor) GetLogo() (string, error) {
-	return "", nil
+	return receptorPackage.GetLogoImpl()
 }
 
+// / GetConfigObj will return the configuration required by the receptor
+// to be able to collect data from the service provider API. This is usually
+// implemented for services that require additional configuration like Jira and Slack
+// which require the user to provide the filters and channel name respectively for
+// the data to be collected. If no additional configuration is required, return nil.
 func (r *Receptor) GetConfigObj() interface{} {
 	return nil
 }
+
+// GetConfigObjDesc will return an object that describes the configuration required
+// by the receptor to be able to collect data from the service provider API.
+// The sdk supports a Config struct that can be used to describe the configuration
+// which can be used to generate a form in the UI for the user to map where the evidence
+// collected will flow. If no additional configuration is required, return nil.
 
 func (r *Receptor) GetConfigObjDesc() interface{} {
 	return nil
 }
 
+// GetEvidenceInfo returns all the evidence information that the receptor will collect.
 func (r *Receptor) GetEvidenceInfo() []*receptor_sdk.Evidence {
 	evidences := []*receptor_sdk.Evidence{}
 	return evidences
